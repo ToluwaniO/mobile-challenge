@@ -4,4 +4,5 @@
     <string name="votes_default">0</string>
     <string name="user_name_default">John Doe</string>
     <string name="comment_body_default">LGTM</string>
+    <string name="please_wait">Please wait</string>
 </resources>

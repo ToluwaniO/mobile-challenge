@@ -66,7 +66,7 @@ public class ImageActivity extends AppCompatActivity {
         TextView profileName = (TextView)findViewById(R.id.user_name);
         TextView commentBody = (TextView)findViewById(R.id.comment_body);
 
-        Glide.with(this).load(comment.getUserPicUrl()).into(profilePic);
+        Glide.with(getApplicationContext()).load(comment.getUserPicUrl()).into(profilePic);
         profileName.setText(comment.getUserName());
         commentBody.setText(comment.getBody());
     }

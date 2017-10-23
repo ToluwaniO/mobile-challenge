@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements ImageAdapter.OnIt
     ImageAdapter adapter;
     RecyclerView recyclerView;
     ImageAdapter.OnItemClickListener listener;
+    LinearLayout loaderLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements ImageAdapter.OnIt
         listener = (ImageAdapter.OnItemClickListener) this;
         imageList = new ArrayList<>();
         adapter = new ImageAdapter(this, imageList, listener);
+        loaderLayout = (LinearLayout)findViewById(R.id.loader_layout);
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         recyclerView.setAdapter(adapter);
@@ -59,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements ImageAdapter.OnIt
             {
                 imageList.add(i);
             }
+            loaderLayout.setVisibility(View.GONE);
             adapter.notifyDataSetChanged();
         }
     }
