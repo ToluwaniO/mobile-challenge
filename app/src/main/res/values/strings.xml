@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">500px</string>
+    <string name="view_more_comments">VIEW MORE COMMENTS</string>
+    <string name="votes_default">0</string>
+    <string name="user_name_default">John Doe</string>
+    <string name="comment_body_default">LGTM</string>
+</resources>
